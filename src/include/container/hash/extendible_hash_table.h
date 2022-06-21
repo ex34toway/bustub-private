@@ -110,7 +110,7 @@ class ExtendibleHashTable {
    * @param dir_page to use for lookup of global depth
    * @return the directory index
    */
-  uint32_t KeyToDirectoryIndex(KeyType key, HashTableDirectoryPage *dir_page);
+  inline auto KeyToDirectoryIndex(KeyType key, HashTableDirectoryPage *dir_page) -> uint32_t;
 
   /**
    * Get the bucket page_id corresponding to a key.
@@ -119,7 +119,7 @@ class ExtendibleHashTable {
    * @param dir_page a pointer to the hash table's directory page
    * @return the bucket page_id corresponding to the input key
    */
-  page_id_t KeyToPageId(KeyType key, HashTableDirectoryPage *dir_page);
+  inline auto KeyToPageId(KeyType key, HashTableDirectoryPage *dir_page) -> uint32_t;
 
   /**
    * Fetches the directory page from the buffer pool manager.
